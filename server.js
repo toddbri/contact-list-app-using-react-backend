@@ -20,7 +20,7 @@ app.use(cors());
 
 app.get('/api/contacts', function(req, res) {
   console.log('get: ');
-  db.any('select * from contacts')
+  db.any('select * from contacts order by id')
   .then((val)=> {return val;})
   .then((val) => res.json(val));
 });
